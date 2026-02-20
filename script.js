@@ -59,27 +59,6 @@ document.getElementById("whatsappSOS").addEventListener("click", function () {
 });
 
 // --------------------------------------
-// DARK MODE
-// --------------------------------------
-document.getElementById("darkModeBtn").addEventListener("click", () => {
-    document.body.classList.toggle("dark-mode");
-});
-
-// --------------------------------------
-// VOICE SEARCH
-// --------------------------------------
-const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
-
-document.getElementById("voiceBtn").addEventListener("click", () => {
-    recognition.start();
-});
-
-recognition.onresult = function(event) {
-    document.getElementById("searchInput").value = event.results[0][0].transcript;
-    document.getElementById("searchInput").dispatchEvent(new Event("input"));
-};
-
-// --------------------------------------
 // NEARBY HOSPITALS & POLICE
 // --------------------------------------
 document.getElementById("nearbyBtn").addEventListener("click", () => {

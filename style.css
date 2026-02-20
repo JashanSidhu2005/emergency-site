@@ -49,17 +49,3 @@ body {
   font-weight: bold;
 }
 
-/* DARK MODE */
-.dark-mode {
-  background-color: #121212 !important;
-  color: white !important;
-}
-
-.dark-mode .card-box {
-  background-color: #1e1e1e !important;
-  color: white !important;
-}
-
-.dark-mode .site-header {
-  background: #b52b27 !important;
-}
