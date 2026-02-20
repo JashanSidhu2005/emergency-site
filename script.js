@@ -29,6 +29,9 @@ services.forEach(s => {
   grid.appendChild(card);
 });
 
+// --------------------------------------
+// SEARCH BAR
+// --------------------------------------
 document.getElementById("searchInput").addEventListener("input", function () {
     const value = this.value.toLowerCase();
     const cards = document.querySelectorAll(".card-box");
@@ -39,9 +42,8 @@ document.getElementById("searchInput").addEventListener("input", function () {
     });
 });
 
-
 // --------------------------------------
-// WHATSAPP SOS BUTTON
+// WHATSAPP SOS
 // --------------------------------------
 document.getElementById("whatsappSOS").addEventListener("click", function () {
     navigator.geolocation.getCurrentPosition(function (position) {
@@ -52,8 +54,24 @@ document.getElementById("whatsappSOS").addEventListener("click", function () {
         let message = `I need help. My location: https://www.google.com/maps?q=${lat},${lon}`;
         let url = `https://api.whatsapp.com/send?text=${encodeURIComponent(message)}`;
 
-        window.location.href = url; // Works on Chrome + Safari
+        window.location.href = url;
     });
+});
+
+// --------------------------------------
+// DARK MODE
+// --------------------------------------
+document.getElementById("darkModeBtn").addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+});
+
+// --------------------------------------
+// VOICE SEARCH
+// --------------------------------------
+const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+
+document.getElementById("voiceBtn").addEventListener("click", () => {
+    recognition.start();
 });
 
 recognition.onresult = function(event) {
@@ -79,23 +97,3 @@ document.getElementById("nearbyBtn").addEventListener("click", () => {
 document.getElementById("panicBtn").addEventListener("click", () => {
     document.getElementById("whatsappSOS").click();
 });
-
-// --------------------------------------
-// DARK MODE TOGGLE
-// --------------------------------------
-document.getElementById("darkModeBtn").addEventListener("click", () => {
-    document.body.classList.toggle("dark-mode");
-});
-// --------------------------------------
-// VOICE SEARCH
-// --------------------------------------
-const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
-
-document.getElementById("voiceBtn").addEventListener("click", () => {
-    recognition.start();
-});
-
-recognition.onresult = function(event) {
-    document.getElementById("searchInput").value = event.results[0][0].transcript;
-    document.getElementById("searchInput").dispatchEvent(new Event("input"));
-};

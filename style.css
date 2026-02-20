@@ -48,6 +48,8 @@ body {
   color: #d9534f;
   font-weight: bold;
 }
+
+/* DARK MODE */
 .dark-mode {
   background-color: #121212 !important;
   color: white !important;
