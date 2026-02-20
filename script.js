@@ -56,4 +56,3 @@ document.getElementById("whatsappSOS").addEventListener("click", function () {
     const msg = `I need help! My location: ${link}`;
     window.open(`https://wa.me/?text=${encodeURIComponent(msg)}`, "_blank");
   });
-});
