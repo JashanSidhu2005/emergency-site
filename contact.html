@@ -38,10 +38,22 @@
       more useful for everyone.
     </p>
 
-    <form class="mt-3">
-      <form class="mt-3" action="https://formsubmit.co/jashansidhu2005a@gmail.com" method="POST">
-      <input type="hidden" name="_captcha" value="false">
-<input type="hidden" name="_template" value="table">
+   <form class="mt-3" action="https://formsubmit.co/jashansidhu2005a@gmail.com" method="POST">
+
+  <!-- Disable captcha -->
+  <input type="hidden" name="_captcha" value="false">
+
+  <!-- Email subject -->
+  <input type="hidden" name="_subject" value="New Emergency Site Message">
+
+  <!-- Form fields -->
+  <input type="text" name="name" class="form-control mb-3" placeholder="Your Name" required>
+  <input type="email" name="email" class="form-control mb-3" placeholder="Your Email" required>
+  <textarea name="message" class="form-control mb-3" rows="5" placeholder="Your Message" required></textarea>
+
+  <button class="btn btn-danger w-100">Send Message</button>
+</form>
+
 
     </form>
   </main>
