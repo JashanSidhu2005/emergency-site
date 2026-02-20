@@ -36,13 +36,18 @@ document.addEventListener('click', function(e){
 });
 
 // WhatsApp SOS
-document.getElementById("whatsappSOS").addEventListener("click", () => {
-  if (!confirm("Send your live location on WhatsApp?")) return;
+document.getElementById("whatsappSOS").addEventListener("click", function () {
+    navigator.geolocation.getCurrentPosition(function (position) {
+        let lat = position.coords.latitude;
+        let lon = position.coords.longitude;
 
-  if (!navigator.geolocation) {
-    alert("Location not supported.");
-    return;
-  }
+        let message = `I need help. My location: https://www.google.com/maps?q=${lat},${lon}`;
+        let url = `https://api.whatsapp.com/send?text=${encodeURIComponent(message)}`;
+
+        window.location.href = url;
+    });
+});
+
 
   navigator.geolocation.getCurrentPosition(pos => {
     const lat = pos.coords.latitude;
