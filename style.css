@@ -86,3 +86,16 @@ body {
   font-size: 1.2rem;
   margin-top: 10px;
 }
+
+.magic-font {
+  font-family: 'Rubik Glitch', cursive;
+  font-size: 2.8rem;
+  color: #ff0000;
+  letter-spacing: 2px;
+}
+.kaleidoscope-font {
+  font-family: 'Kalam', cursive;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #0047ab;
+}
