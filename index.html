@@ -21,10 +21,10 @@ body{
 }
 .navbar-brand{
   font-weight:700;
-  font-size:1.5rem;
+  font-size:1.6rem;
 }
 
-/* HERO */
+/* HERO SECTION (TALLER IMAGE) */
 .hero{
   background:
   linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),
@@ -32,21 +32,23 @@ body{
   background-size:cover;
   background-position:center;
   color:white;
-  padding:110px 20px;
+  padding:200px 20px; /* DOUBLED HEIGHT */
   text-align:center;
 }
 
 .hero h1{
-  font-size:3rem;
+  font-size:3.2rem;
   font-weight:700;
 }
 
 .hero p{
-  font-size:1.1rem;
-  margin-bottom:25px;
+  font-size:1.2rem;
+  max-width:700px;
+  margin:20px auto 30px;
+  line-height:1.6;
 }
 
-/* SEARCH BAR */
+/* SEARCH */
 #searchInput{
   border-radius:30px;
   padding:12px 20px;
@@ -68,7 +70,7 @@ body{
 
 .card-box img{
   width:100%;
-  height:200px;
+  height:260px; /* IMAGE HEIGHT INCREASED */
   object-fit:cover;
 }
 
@@ -87,6 +89,8 @@ body{
 .panic-btn{
   font-weight:600;
   letter-spacing:1px;
+  padding:14px 28px;
+  font-size:1.1rem;
 }
 
 /* FOOTER */
@@ -105,28 +109,18 @@ footer{
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg navbar-dark">
 <div class="container">
-<a class="navbar-brand" href="#">India Emergency</a>
+<a class="navbar-brand" href="index.html">India Emergency</a>
 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
 <span class="navbar-toggler-icon"></span>
 </button>
 
 <div class="collapse navbar-collapse" id="navMenu">
 <ul class="navbar-nav ms-auto">
-  <li class="nav-item">
-    <a class="nav-link active" href="index.html">Home</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="about.html">About</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="services.html">Services</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="safety.html">Safety Tips</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="contact.html">Contact</a>
-  </li>
+<li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+<li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+<li class="nav-item"><a class="nav-link" href="safety.html">Safety Tips</a></li>
+<li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
 </ul>
 </div>
 </div>
@@ -135,14 +129,23 @@ footer{
 <!-- HERO -->
 <section class="hero">
 <div class="container">
-<h1>Emergency Numbers India</h1>
-<p>Instant access to critical help across India</p>
+<h1>National Emergency Assistance Portal</h1>
 
-<button id="panicBtn" class="btn btn-danger btn-lg panic-btn">PANIC</button>
+<p>
+If you are in danger, facing a medical emergency, witnessing a crime, 
+or require immediate assistance, this platform provides quick access 
+to essential emergency services across India. 
+Use the Panic Button below to instantly share your live location 
+with a trusted contact through WhatsApp.
+</p>
+
+<button id="panicBtn" class="btn btn-danger panic-btn">
+🚨 PANIC BUTTON – SHARE LIVE LOCATION
+</button>
 </div>
 </section>
 
-<!-- MAIN -->
+<!-- MAIN CONTENT -->
 <main class="container my-5">
 
 <input type="text" id="searchInput" class="form-control mb-4" placeholder="Search emergency service...">
@@ -152,7 +155,7 @@ footer{
 </main>
 
 <footer>
-© 2026 Emergency Services India | Educational Project
+© 2026 Emergency Services India | Developed for Educational Purposes
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -187,7 +190,7 @@ grid.innerHTML+=`
 `;
 });
 
-/* SEARCH */
+/* SEARCH FUNCTION */
 document.getElementById("searchInput").addEventListener("input",function(){
 const value=this.value.toLowerCase();
 document.querySelectorAll(".card-box").forEach(card=>{
@@ -196,20 +199,27 @@ card.parentElement.style.display=title.includes(value)?"block":"none";
 });
 });
 
-/* WHATSAPP SOS */
-document.getElementById("whatsappSOS").addEventListener("click",function(){
+/* PANIC BUTTON FUNCTION */
+document.getElementById("panicBtn").addEventListener("click",function(){
 navigator.geolocation.getCurrentPosition(function(position){
 let lat=position.coords.latitude;
 let lon=position.coords.longitude;
-let message=`I need help. My location: https://www.google.com/maps?q=${lat},${lon}`;
+
+let message=`🚨 EMERGENCY ALERT 🚨
+
+I am currently in a dangerous situation and require immediate assistance.
+
+My live location:
+https://www.google.com/maps?q=${lat},${lon}
+
+Please respond as soon as possible.`;
+
 let url=`https://api.whatsapp.com/send?text=${encodeURIComponent(message)}`;
 window.location.href=url;
-});
-});
 
-/* PANIC BUTTON */
-document.getElementById("panicBtn").addEventListener("click",function(){
-document.getElementById("whatsappSOS").click();
+},function(){
+alert("Location access is required to send emergency alert.");
+});
 });
 </script>
 
