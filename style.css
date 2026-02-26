@@ -53,28 +53,33 @@ body {
 /* MAGIC FONTS */
 .magic-font {
   font-family: 'Rubik Glitch';
-  font-size: 4.8rem;
+  font-size: 6.8rem;
   color: #0b0d0e;
   letter-spacing: 2px;
 }
 
 .kaleidoscope-font {
   font-family: 'Kalam';
-  font-size: 2.4rem;
+  font-size: 4.4rem;
   font-weight: 700;
   color: #e80b0b;
 }
 
 .hero {
-    min-height: 100vh;
+    /* 50% dark overlay + background image */
+    background: 
+        linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+        url('../images/bg.jpg');
 
-    /* ONLY your background picture */
-    background-image: url('images/bg.jpg');
-
-    background-size: cover;      /* makes picture big */
-    background-position: center; /* centers picture */
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
 
-    padding-top: 40px;
-    padding-bottom: 40px;
+    /* spacing (only takes space based on content) */
+    padding: 60px 20px;
+
+    /* text styling */
+    color: white;
+    text-align: center;
 }
+
