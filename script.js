@@ -32,13 +32,14 @@ services.forEach(s => {
 // --------------------------------------
 // SEARCH BAR
 // --------------------------------------
-document.getElementById("searchInput").addEventListener("input", function(){
-  const value = this.value.toLowerCase();
+document.getElementById("searchInput").addEventListener("input", function () {
+    const value = this.value.toLowerCase();
+    const cards = document.querySelectorAll(".card-box");
 
-  document.querySelectorAll(".card-box").forEach(card=>{
-    const title = card.querySelector("h5").textContent.toLowerCase();
-    card.parentElement.style.display = title.includes(value) ? "block" : "none";
-  });
+    cards.forEach(card => {
+        const title = card.querySelector(".card-title").textContent.toLowerCase();
+        card.parentElement.style.display = title.includes(value) ? "block" : "none";
+    });
 });
 
 // --------------------------------------
@@ -74,29 +75,4 @@ document.getElementById("nearbyBtn").addEventListener("click", () => {
 // --------------------------------------
 document.getElementById("panicBtn").addEventListener("click", () => {
     document.getElementById("whatsappSOS").click();
-});
-
-function renderServices(country){
-  grid.innerHTML = "";
-
-  data[country].forEach(s=>{
-    grid.innerHTML += `
-    <div class="col-12 col-md-6 col-lg-4">
-      <div class="card-box">
-        <img src="${s.img}" alt="${s.title}">
-        <div class="card-body-custom">
-          <h5>${s.title}</h5>
-          <div class="card-number">${s.number}</div>
-          <a href="tel:${s.number}" class="btn btn-danger mt-2 w-100">Call Now</a>
-        </div>
-      </div>
-    </div>
-    `;
-  });
-}
-
-renderServices("india");
-
-document.getElementById("countrySelect").addEventListener("change", function(){
-  renderServices(this.value);
 });
