@@ -1,69 +1,100 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Safety Tips - Emergency Help</title>
-  <link href="styles.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Safety Tips - Emergency Services Directory</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="style.css" rel="stylesheet">
 </head>
 
 <body>
 
-  <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
-    <div class="container">
-      <a class="navbar-brand fw-bold" href="index.html">Emergency Help</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navMenu">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-          <li class="nav-item"><a class="nav-link active" href="safety.html">Safety Tips</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-        </ul>
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+<div class="container">
+<a class="navbar-brand" href="index.html">Emergency<span>Connect</span></a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+<span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse" id="navMenu">
+<ul class="navbar-nav ms-auto align-items-center">
+<li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+<li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+<li class="nav-item"><a class="nav-link active" href="safety.html">Safety Tips</a></li>
+<li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+<!-- Dark/Light Mode Toggle -->
+<li class="nav-item">
+<button id="themeToggle" class="theme-toggle" aria-label="Toggle Dark/Light Mode">🌙</button>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+
+<!-- MAIN CONTENT -->
+<main class="container my-5 flex-grow-1">
+  <div class="row justify-content-center">
+    <div class="col-lg-10">
+      <div class="content-box">
+        <h2 class="text-center mb-5">Important <span class="text-accent">Safety Tips</span></h2>
+
+        <div class="row g-4">
+          <div class="col-md-6">
+            <h4 class="mb-3">🔥 Fire Safety</h4>
+            <ul class="mb-0" style="color: var(--text-secondary); line-height: 1.8;">
+              <li>Never use elevators during a fire.</li>
+              <li>Cover your nose with a wet cloth to avoid smoke.</li>
+              <li>Check doors for heat before opening them.</li>
+              <li>Keep a fire extinguisher at home.</li>
+            </ul>
+          </div>
+          
+          <div class="col-md-6">
+            <h4 class="mb-3">🚑 Medical Emergency</h4>
+            <ul class="mb-0" style="color: var(--text-secondary); line-height: 1.8;">
+              <li>Check if the person is conscious and breathing.</li>
+              <li>Do not give food or water to an unconscious person.</li>
+              <li>Apply pressure to stop bleeding.</li>
+              <li>Call an ambulance immediately.</li>
+            </ul>
+          </div>
+
+          <div class="col-md-6">
+            <h4 class="mb-3">👩 Women Safety</h4>
+            <ul class="mb-0" style="color: var(--text-secondary); line-height: 1.8;">
+              <li>Share your live location with trusted contacts.</li>
+              <li>Use well‑lit and crowded routes at night.</li>
+              <li>Keep emergency numbers saved on speed dial.</li>
+              <li>Trust your instincts — leave unsafe situations quickly.</li>
+            </ul>
+          </div>
+
+          <div class="col-md-6">
+            <h4 class="mb-3">🚗 Road Safety</h4>
+            <ul class="mb-0" style="color: var(--text-secondary); line-height: 1.8;">
+              <li>Always wear a seatbelt.</li>
+              <li>Do not use your phone while driving.</li>
+              <li>Follow speed limits.</li>
+              <li>Keep a first‑aid kit in your vehicle.</li>
+            </ul>
+          </div>
+        </div>
+
       </div>
     </div>
-  </nav>
+  </div>
+</main>
 
-  <main class="container py-4">
-    <h2>Important Safety Tips</h2>
+<footer>
+© 2026 Emergency Services Directory | Developed for Educational Purposes
+</footer>
 
-    <h3 class="mt-4">🔥 Fire Safety</h3>
-    <ul>
-      <li>Never use elevators during a fire.</li>
-      <li>Cover your nose with a wet cloth to avoid smoke.</li>
-      <li>Check doors for heat before opening them.</li>
-      <li>Keep a fire extinguisher at home.</li>
-    </ul>
-
-    <h3 class="mt-4">🚑 Medical Emergency</h3>
-    <ul>
-      <li>Check if the person is conscious and breathing.</li>
-      <li>Do not give food or water to an unconscious person.</li>
-      <li>Apply pressure to stop bleeding.</li>
-      <li>Call an ambulance immediately.</li>
-    </ul>
-
-    <h3 class="mt-4">👩 Women Safety</h3>
-    <ul>
-      <li>Share your live location with trusted contacts.</li>
-      <li>Use well‑lit and crowded routes at night.</li>
-      <li>Keep emergency numbers saved on speed dial.</li>
-      <li>Trust your instincts — leave unsafe situations quickly.</li>
-    </ul>
-
-    <h3 class="mt-4">🚗 Road Safety</h3>
-    <ul>
-      <li>Always wear a seatbelt.</li>
-      <li>Do not use your phone while driving.</li>
-      <li>Follow speed limits.</li>
-      <li>Keep a first‑aid kit in your vehicle.</li>
-    </ul>
-  </main>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
 </body>
 </html>

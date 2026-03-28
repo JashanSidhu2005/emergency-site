@@ -1,53 +1,93 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Services - Emergency Help</title>
-  <link href="styles.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Services - Emergency Services Directory</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="style.css" rel="stylesheet">
+<style>
+/* Scoped specific list styles for services */
+.services-list {
+  background: var(--input-bg);
+  border: 1px solid var(--input-border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.services-list-item {
+  color: var(--text-primary);
+  background: transparent;
+  border-bottom: 1px solid var(--input-border);
+  padding: 16px 20px;
+}
+.services-list-item:last-child {
+  border-bottom: none;
+}
+</style>
 </head>
 
 <body>
 
-  <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
-    <div class="container">
-      <a class="navbar-brand fw-bold" href="index.html">Emergency Help</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navMenu">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-          <li class="nav-item"><a class="nav-link active" href="services.html">Services</a></li>
-          <li class="nav-item"><a class="nav-link" href="safety.html">Safety Tips</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-        </ul>
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+<div class="container">
+<a class="navbar-brand" href="index.html">Emergency<span>Connect</span></a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+<span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse" id="navMenu">
+<ul class="navbar-nav ms-auto align-items-center">
+<li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+<li class="nav-item"><a class="nav-link active" href="services.html">Services</a></li>
+<li class="nav-item"><a class="nav-link" href="safety.html">Safety Tips</a></li>
+<li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+<!-- Dark/Light Mode Toggle -->
+<li class="nav-item">
+<button id="themeToggle" class="theme-toggle" aria-label="Toggle Dark/Light Mode">🌙</button>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+
+<!-- MAIN CONTENT -->
+<main class="container my-5 flex-grow-1">
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      <div class="content-box">
+        <h2 class="text-center mb-4">Emergency <span class="text-accent">Services</span></h2>
+        
+        <p class="text-center mb-4">
+          Below is a list of verified emergency helpline services available across multiple countries.
+          These services operate 24/7 and are essential for public safety.
+        </p>
+        
+        <div class="services-list mt-4">
+          <div class="services-list-item"><strong>Police</strong> — For crime, theft, assault, or danger</div>
+          <div class="services-list-item"><strong>Ambulance</strong> — For medical emergencies, injuries or health issues</div>
+          <div class="services-list-item"><strong>Fire Department</strong> — For fire accidents and hazardous leaks</div>
+          <div class="services-list-item"><strong>Women Helpline</strong> — For women’s safety and domestic reporting</div>
+          <div class="services-list-item"><strong>Child Helpline</strong> — For child protection and missing persons</div>
+          <div class="services-list-item"><strong>Cyber Crime</strong> — For online fraud or cyber threats</div>
+          <div class="services-list-item"><strong>Disaster Management</strong> — For natural disasters and large scale crises</div>
+          <div class="services-list-item"><strong>Road Accident</strong> — For highway emergencies and collisions</div>
+          <div class="services-list-item"><strong>Mental Health Support</strong> — For suicide prevention and crisis management</div>
+        </div>
+
       </div>
     </div>
-  </nav>
+  </div>
+</main>
 
-  <main class="container py-4">
-    <h2>Emergency Services We Provide</h2>
-    <p>
-      Below is a list of verified emergency helpline numbers available across India.
-      These services operate 24/7 and are essential for public safety.
-    </p>
+<footer>
+© 2026 Emergency Services Directory | Developed for Educational Purposes
+</footer>
 
-    <ul class="list-group mt-3">
-      <li class="list-group-item"><strong>Police (100)</strong> — For crime, theft, assault, or danger</li>
-      <li class="list-group-item"><strong>Ambulance (102)</strong> — For medical emergencies</li>
-      <li class="list-group-item"><strong>Fire Brigade (101)</strong> — For fire accidents</li>
-      <li class="list-group-item"><strong>Women Helpline (1091)</strong> — For women’s safety</li>
-      <li class="list-group-item"><strong>Child Helpline (1098)</strong> — For child protection</li>
-      <li class="list-group-item"><strong>Cyber Crime (1930)</strong> — For online fraud or cyber threats</li>
-      <li class="list-group-item"><strong>Disaster Management (108)</strong> — For natural disasters</li>
-      <li class="list-group-item"><strong>Road Accident (1073)</strong> — For highway emergencies</li>
-      <li class="list-group-item"><strong>Tourist Helpline (1363)</strong> — For travelers in India</li>
-    </ul>
-  </main>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
