@@ -52,6 +52,14 @@ body {
   transition: all 0.3s ease;
 }
 
+[data-theme="light"] .navbar-toggler-icon {
+  filter: invert(1) brightness(0);
+}
+
+[data-theme="light"] .navbar-toggler {
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
 .navbar-brand {
   font-weight: 800;
   font-size: 1.6rem;
