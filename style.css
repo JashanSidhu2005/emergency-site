@@ -74,14 +74,19 @@ body {
   color: var(--accent-color);
 }
 
-.brand-logo {
-  filter: drop-shadow(0 0 8px rgba(239, 68, 68, 0.4));
-  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.4s ease;
+.brand-logo-img {
+  height: 45px;
+  width: auto;
+  border-radius: 6px;
+  background-color: white;
+  padding: 4px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.navbar-brand:hover .brand-logo {
-  transform: scale(1.15) rotate(8deg);
-  filter: drop-shadow(0 0 15px rgba(239, 68, 68, 0.8));
+.navbar-brand:hover .brand-logo-img {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(239, 68, 68, 0.4);
 }
 
 .nav-link {
