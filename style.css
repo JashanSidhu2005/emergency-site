@@ -66,8 +66,22 @@ body {
   color: var(--text-primary) !important;
   letter-spacing: -0.5px;
 }
+.navbar-brand:hover, .navbar-brand:focus {
+  color: var(--text-primary) !important;
+}
+
 .navbar-brand span {
   color: var(--accent-color);
+}
+
+.brand-logo {
+  filter: drop-shadow(0 0 8px rgba(239, 68, 68, 0.4));
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.4s ease;
+}
+
+.navbar-brand:hover .brand-logo {
+  transform: scale(1.15) rotate(8deg);
+  filter: drop-shadow(0 0 15px rgba(239, 68, 68, 0.8));
 }
 
 .nav-link {
