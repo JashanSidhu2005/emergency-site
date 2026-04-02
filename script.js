@@ -15,7 +15,7 @@ const emergencyData = {
     ],
     canada: [
         { key: "cat_pfa", number: "911", img: "images/canadapolice.jpg" },
-        { key: "cat_poison", number: "1-844-POISON-X", img: "images/canadahealth.jpg" },
+        { key: "cat_poison", number: "1-844-764-7669", img: "images/canadahealth.jpg" },
         { key: "cat_mental", number: "988", img: "images/canadamental.jpg" },
         { key: "cat_telehealth", number: "811", img: "images/canadaambulance.jpg" },
         { key: "cat_kidshelp", number: "1-800-668-6868", img: "images/canadachild.jpg" }
@@ -51,12 +51,12 @@ let currentLang = getLang();
 
 function updateLanguage(lang) {
     if (!translations || !translations[lang]) return;
-    
+
     // Update all static elements with data-i18n
     document.querySelectorAll("[data-i18n]").forEach(el => {
         const key = el.getAttribute("data-i18n");
         if (translations[lang][key]) {
-            if(el.tagName === "INPUT" || el.tagName === "TEXTAREA") {
+            if (el.tagName === "INPUT" || el.tagName === "TEXTAREA") {
                 el.placeholder = translations[lang][key];
             } else {
                 el.innerHTML = translations[lang][key];
@@ -66,7 +66,7 @@ function updateLanguage(lang) {
 
     // Re-render dynamic cards with translated titles
     const countrySelectLocal = document.getElementById("countrySelect");
-    if(countrySelectLocal) {
+    if (countrySelectLocal) {
         renderCards(countrySelectLocal.value);
     }
 }
@@ -74,7 +74,7 @@ function updateLanguage(lang) {
 // We attach event listener to document in case nav is not fully parsed
 document.addEventListener("DOMContentLoaded", () => {
     const langSelect = document.getElementById("langSelect");
-    if(langSelect) {
+    if (langSelect) {
         langSelect.value = currentLang;
         langSelect.addEventListener("change", (e) => {
             currentLang = e.target.value;
@@ -94,11 +94,11 @@ const countrySelect = document.getElementById("countrySelect");
 const searchInput = document.getElementById("searchInput");
 
 function renderCards(country) {
-    if (!grid) return; 
+    if (!grid) return;
 
     grid.innerHTML = "";
     const services = emergencyData[country] || [];
-    
+
     // Get translations for current lang, default to EN
     const currentDict = translations[currentLang] || translations["en"];
 
